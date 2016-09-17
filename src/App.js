@@ -22,9 +22,11 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>{this.state.message}</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className="board">
+          {this.state.board.map((cell) => {
+            return <div className="square">{cell}</div>;
+          })}
+        </div>
       </div>
     );
   }
