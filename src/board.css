@@ -1,0 +1,29 @@
+
+.board {
+  width: 480px;
+  height: 460px;
+  margin-top: 5px;
+  margin-right: auto;
+  margin-left: auto;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+.square {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  display: inline-flex;
+  margin: 0px 1px 0px 1px;
+  justify-content: center;
+  align-items: center;
+  font-size: 90px;
+}
+
+.square:hover {
+  background-color: #99bbee;
+}
+/*
+.container {
+  display: inline-flex;
+
+}*/
