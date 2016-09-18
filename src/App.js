@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import './board.css';
+
 class App extends Component {
 
   constructor (props) {
@@ -15,6 +16,15 @@ class App extends Component {
       ]
     };
   }
+  handleClick (index) {
+    if (this.state.board[index] === '') {
+      this.state.board[index] = this.state.currentTurn;
+      this.setState({
+        board: this.state.board,
+        currentTurn: this.state.currentTurn === this.state.PLAYER_TWO ? this.state.PLAYER_ONE : this.state.PLAYER_TWO
+      })
+    }
+  }
   render() {
     return (
       <div className="App">
@@ -23,8 +33,8 @@ class App extends Component {
           <h2>{this.state.message}</h2>
         </div>
         <div className="board">
-          {this.state.board.map((cell) => {
-            return <div className="square">{cell}</div>;
+          {this.state.board.map((cell,i) => {
+            return <div onClick={this.handleClick.bind(this,i)} className="square" key={i}>{cell}</div>;
           })}
         </div>
       </div>
