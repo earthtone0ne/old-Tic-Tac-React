@@ -60,7 +60,7 @@ class App extends Component {
           {this.state.board.map((cell,i) => {
             return <div onClick={this.handleClick.bind(this,i)} className="square" key={i}>{cell}</div>;
           })}
-          <div>
+          <div id="div-replay-btn">
             <button type="submit" id="replay-btn" onClick={this.playAgain.bind(this)} className="Primary">
               Play Again
             </button>
